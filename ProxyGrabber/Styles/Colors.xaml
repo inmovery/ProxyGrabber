@@ -1,0 +1,56 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:ProxyGrabber.Styles">
+
+    <!-- Color for toolbar each window -->
+    <Color x:Key="BackgroundHeader">#FFFFFF</Color>
+    <SolidColorBrush x:Key="BackgroundHeaderBrush" Color="{StaticResource BackgroundHeader}"/>
+
+    <!-- Color for content container each window -->
+    <Color x:Key="BackgroundLight">#F8F8FB</Color>
+    <SolidColorBrush x:Key="BackgroundLightBrush" Color="{StaticResource BackgroundLight}"/>
+
+    <!-- Color for content container windows are responsible for edit some data -->
+    <Color x:Key="BackgroundDark">#373B53</Color>
+    <SolidColorBrush x:Key="BackgroundDarkBrush" Color="{StaticResource BackgroundDark}"/>
+
+    <!-- Color for all buttons -->
+    <Color x:Key="BackgroundButton">#6F52ED</Color>
+    <SolidColorBrush x:Key="BackgroundButtonBrush" Color="{StaticResource BackgroundButton}"/>
+
+    <!-- Color for borders of control elements (Button, TextBox) -->
+    <Color x:Key="Borders">#373B53</Color>
+    <SolidColorBrush x:Key="BordersBrush" Color="{StaticResource Borders}"/>
+
+    <!-- Light text color (White) -->
+    <Color x:Key="ForegroundLight">#FFFFFF</Color>
+    <SolidColorBrush x:Key="ForegroundWhiteBrush" Color="{StaticResource ForegroundLight}"/>
+
+    <!-- Dark text color (Black) -->
+    <Color x:Key="ForegroundDark">#000000</Color>
+    <SolidColorBrush x:Key="ForegroundBlackBrush" Color="{StaticResource ForegroundBlack}"/>
+
+    <!-- Новое -->
+
+    <SolidColorBrush x:Key="DarkBaseBrush" Color="#158150" />
+    <Color x:Key="DarkBaseColor">#158150</Color>
+
+    <SolidColorBrush x:Key="MediumBaseBrush" Color="#6F52ED" />
+    <Color x:Key="MediumBaseColor">#6F52ED</Color>
+
+    <SolidColorBrush x:Key="LightBaseBrush" Color="#FF2CB679" />
+    <Color x:Key="LightBaseColor">#FF2CB679</Color>
+
+    <SolidColorBrush x:Key="UltraLightBaseBrush" Color="#FF3BC588" />
+    <Color x:Key="UltraLightBaseColor">#FF3BC588</Color>
+
+    <SolidColorBrush x:Key="DarkBrush" Color="#FFD6D6D6" />
+    <Color x:Key="DarkColor">#FFD6D6D6</Color>
+
+    <SolidColorBrush x:Key="MediumBrush" Color="#FFF1F1F1" />
+    <Color x:Key="MediumColor">#FFF1F1F1</Color>
+
+    <SolidColorBrush x:Key="LightBrush" Color="white" />
+    <Color x:Key="LightColor">white</Color>
+
+</ResourceDictionary>

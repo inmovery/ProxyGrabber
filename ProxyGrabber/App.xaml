@@ -1,0 +1,25 @@
+﻿<Application x:Class="ProxyGrabber.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:ProxyGrabber"
+             xmlns:system="clr-namespace:System;assembly=mscorlib"
+             StartupUri="Views\MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <!-- Custom sources for single items -->
+                <ResourceDictionary Source="Styles/Colors.xaml" />
+                <ResourceDictionary Source="Styles/Fonts.xaml" />
+                <ResourceDictionary Source="Styles/Icons.xaml" />
+
+                <!-- Custom sources for grouped items  -->
+                <ResourceDictionary Source="Styles/Defaults.xaml" /> <!-- Override Scrollbar and other controls -->
+                <ResourceDictionary Source="Styles/Texts.xaml" /> <!-- Custom texts --> 
+                <ResourceDictionary Source="Styles/Buttons.xaml" /> <!-- Custom buttons -->
+                <ResourceDictionary Source="Styles/ContentControls.xaml" /> <!-- Wrapper for changing the background -->
+                <ResourceDictionary Source="Styles/TextControls.xaml"/> <!-- Custom TextBox -->
+                <ResourceDictionary Source="Styles/UserControls.xaml" /> <!-- Large items -->
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

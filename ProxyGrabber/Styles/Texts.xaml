@@ -1,0 +1,28 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:ProxyGrabber.Styles">
+
+    <Style TargetType="{x:Type TextBlock}" x:Key="HeaderText" BasedOn="{StaticResource BaseTextBlockStyle}">
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="FontFamily" Value="{StaticResource MontserratSemiBold}" />
+        <Setter Property="FontSize" Value="20" />
+        <Setter Property="Margin" Value="10 0 0 0" />
+        <Setter Property="Padding" Value="10" />
+    </Style>
+
+    <Style TargetType="{x:Type TextBlock}" x:Key="TableHeaderText" BasedOn="{StaticResource BaseTextBlockStyle}">
+        <Setter Property="TextAlignment" Value="Center" />
+        <Setter Property="FontFamily" Value="{StaticResource MontserratRegular}" />
+        <Setter Property="FontSize" Value="20" />
+        <Setter Property="Padding" Value="0 10 0 10" />
+    </Style>
+
+    <Style TargetType="{x:Type TextBlock}" x:Key="TableContentText" BasedOn="{StaticResource BaseTextBlockStyle}">
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="TextAlignment" Value="Center" />
+        <Setter Property="FontFamily" Value="{StaticResource MontserratRegular}" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="Padding" Value="0 10 0 10" />
+    </Style>
+
+</ResourceDictionary>
