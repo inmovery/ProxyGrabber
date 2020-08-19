@@ -13,13 +13,22 @@ namespace ProxyGrabber.Models {
 
         public ProxyType Type { get; set; } 
 
-        public Proxy() {}
+        public Country Country { get; set; }
 
-        public Proxy(string ip_address, string port, ProxyType type) {
+        public Anonymity Anonymity { get; set; }
+
+        public int Speed { get; set; }
+
+        public Proxy(string ip_address, string port, ProxyType type, Country country, Anonymity anonymity, int speed) {
             this.Ip = ip_address;
             this.Port = port;
             this.Type = type;
+            this.Country = country;
+            this.Anonymity = anonymity;
+            this.Speed = speed;
         }
+
+        public Proxy() { }
 
     }
 }

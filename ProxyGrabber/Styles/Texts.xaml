@@ -12,17 +12,17 @@
 
     <Style TargetType="{x:Type TextBlock}" x:Key="TableHeaderText" BasedOn="{StaticResource BaseTextBlockStyle}">
         <Setter Property="TextAlignment" Value="Center" />
-        <Setter Property="FontFamily" Value="{StaticResource MontserratRegular}" />
-        <Setter Property="FontSize" Value="20" />
-        <Setter Property="Padding" Value="0 10 0 10" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="FontSize" Value="16" />
     </Style>
 
     <Style TargetType="{x:Type TextBlock}" x:Key="TableContentText" BasedOn="{StaticResource BaseTextBlockStyle}">
         <Setter Property="VerticalAlignment" Value="Center" />
         <Setter Property="TextAlignment" Value="Center" />
-        <Setter Property="FontFamily" Value="{StaticResource MontserratRegular}" />
+        <Setter Property="FontFamily" Value="{StaticResource MontserratSemiBold}" />
         <Setter Property="FontSize" Value="14" />
-        <Setter Property="Padding" Value="0 10 0 10" />
     </Style>
 
 </ResourceDictionary>

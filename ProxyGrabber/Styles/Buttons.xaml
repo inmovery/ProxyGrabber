@@ -18,20 +18,18 @@
         </Setter>
     </Style>
 
-    <!-- Round Add Button -->
-    <Style TargetType="{x:Type Button}" x:Key="AddButtonTemplate" BasedOn="{StaticResource BaseStyle}">
-        <Setter Property="WindowChrome.IsHitTestVisibleInChrome" Value="True" />
-        <!-- Возможно, не нужно -->
-        <Setter Property="Background" Value="{StaticResource BackgroundButtonBrush}" />
+    <!-- Settings Button -->
+    <Style TargetType="{x:Type Button}" x:Key="SettingsButton" BasedOn="{StaticResource BaseStyle}">
+        <Setter Property="Background" Value="{StaticResource GeneralBrush}" />
         <Setter Property="Foreground" Value="{StaticResource ForegroundWhiteBrush}" />
-        <Setter Property="Padding" Value="10" />
+        <Setter Property="Padding" Value="10 5 10 5" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Button}">
                     <Border CornerRadius="5" Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}" BorderThickness="1">
                         <StackPanel Orientation="Horizontal">
-                            <ContentControl Width="21" Height="17" Content="{StaticResource IconPlus}"/>
-                            <ContentPresenter Margin="10 0 0 0" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            <ContentControl Width="24" Height="24" VerticalAlignment="Center" Content="{StaticResource SettingsIcon}" />
+                            <ContentPresenter Margin="5 0 0 0" HorizontalAlignment="Center" VerticalAlignment="Center" />
                         </StackPanel>
                     </Border>
                 </ControlTemplate>
@@ -44,19 +42,18 @@
         </Style.Triggers>
     </Style>
 
-    <!-- Round Edit Button -->
-    <Style TargetType="{x:Type Button}" x:Key="EditButtonTemplate" BasedOn="{StaticResource BaseStyle}">
-        <Setter Property="WindowChrome.IsHitTestVisibleInChrome" Value="True" />
-        <!-- Возможно, не нужно -->
-        <Setter Property="Background" Value="{StaticResource BackgroundButtonBrush}" />
+
+    <!-- Search Button -->
+    <Style TargetType="{x:Type Button}" x:Key="SearchButton" BasedOn="{StaticResource BaseStyle}">
+        <Setter Property="Background" Value="#18D162" />
         <Setter Property="Foreground" Value="{StaticResource ForegroundWhiteBrush}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Button}">
-                    <Border CornerRadius="5" Background="{TemplateBinding Background}" BorderThickness="1">
+                    <Border CornerRadius="5" Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}" BorderThickness="1">
                         <StackPanel Orientation="Horizontal">
-                            <ContentControl Width="22" Height="22" Margin="10 0 0 0" Content="{StaticResource IconEdit}"/>
-                            <ContentPresenter Margin="10 0 10 0" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            <ContentControl Width="24" Height="24" VerticalAlignment="Center" Content="{StaticResource SearchIcon}" />
+                            <ContentPresenter Margin="0 0 0 3" HorizontalAlignment="Center" VerticalAlignment="Center" />
                         </StackPanel>
                     </Border>
                 </ControlTemplate>
@@ -113,7 +110,8 @@
         </Style.Triggers>
     </Style>
 
-    <Style TargetType="{x:Type Button}" x:Key="RegularButton" BasedOn="{StaticResource BaseStyle}">
+    <!-- Button with a transparent background -->
+    <Style TargetType="{x:Type Button}" x:Key="RegularButtonTemplate" BasedOn="{StaticResource BaseStyle}">
         <Setter Property="WindowChrome.IsHitTestVisibleInChrome" Value="True" />
         <Setter Property="Background" Value="Transparent" />
 
@@ -135,10 +133,9 @@
 
     </Style>
 
-    <Style TargetType="{x:Type Button}" x:Key="ButtonIconTemplate" BasedOn="{StaticResource BaseStyle}">
-        <Setter Property="WindowChrome.IsHitTestVisibleInChrome" Value="True" />
-        <!-- Возможно, не нужно -->
-        <Setter Property="Background" Value="{StaticResource BackgroundButtonBrush}" />
+    <!-- Button with a colored background -->
+    <Style TargetType="{x:Type Button}" x:Key="CustomButtonTemplate" BasedOn="{StaticResource BaseStyle}">
+        <Setter Property="Background" Value="{StaticResource GeneralBrush}" />
         <Setter Property="Foreground" Value="{StaticResource ForegroundWhiteBrush}" />
         <Setter Property="Template">
             <Setter.Value>

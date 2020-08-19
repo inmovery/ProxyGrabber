@@ -46,6 +46,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -64,8 +65,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Models\Anonymity.cs" />
+    <Compile Include="Models\Country.cs" />
     <Compile Include="Models\Proxy.cs" />
     <Compile Include="Models\ProxyType.cs" />
+    <Compile Include="Models\Website.cs" />
     <Compile Include="ViewModels\Base\BaseViewModel.cs" />
     <Compile Include="ViewModels\Base\RelayCommand.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
@@ -176,7 +180,15 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Images\Russia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ScrollSynchronizer\ScrollSynchronizer.csproj">
+      <Project>{f518ceea-7343-4d72-8567-6dca115ab6f7}</Project>
+      <Name>ScrollSynchronizer</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Fody.6.1.1\build\Fody.targets" Condition="Exists('..\packages\Fody.6.1.1\build\Fody.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

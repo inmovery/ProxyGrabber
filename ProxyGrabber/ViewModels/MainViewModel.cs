@@ -14,6 +14,9 @@ using System;
 using ProxyGrabber.ViewModels;
 using System.Linq;
 using System.Reflection;
+using System.Drawing;
+using Point = System.Windows.Point;
+using ProxyGrabber.Views;
 
 namespace ProxyGrabber {
 
@@ -37,12 +40,16 @@ namespace ProxyGrabber {
         /// <summary>
         /// The radius of the edges of the window
         /// </summary>
-        private int mWindowRadius = 0; // 3
+        private int mWindowRadius = 0;
 
-        /// <summary>
-        /// 
-        /// </summary>
         private ICommand mChangeSettings { get; set; }
+
+        private ICommand mSearchProxy { get; set; }
+
+        private ICommand mExportToTxt { get; set; }
+
+        private ICommand mExportToClipboard { get; set; }
+
 
         #endregion Private Member
 
@@ -51,7 +58,7 @@ namespace ProxyGrabber {
         /// <summary>
         /// The smallest width the window can go to
         /// </summary>
-        public double WindowMinimumWidth { get; set; } = 800;
+        public double WindowMinimumWidth { get; set; } = 900;
 
         /// <summary>
         /// The smallest height the window can go to
@@ -142,14 +149,29 @@ namespace ProxyGrabber {
         #region General variables
 
         /// <summary>
-        /// The collection of sensors for live updating items
+        /// The collection of proxy for live updating items
         /// </summary>
         public ObservableCollection<Proxy> Proxies { get; set; }
 
         /// <summary>
-        /// The collection of sensors to display items for
+        /// The collection of proxy to display items for
         /// </summary>
         public ICollectionView ProxiesView { get; set; }
+
+        /// <summary>
+        /// The collection of websites for live updating items
+        /// </summary>
+        public ObservableCollection<Website> WebsitesForCheck { get; set; }
+
+        /// <summary>
+        /// The colletcion of websites to display items for
+        /// </summary>
+        public ICollectionView WebsitesForCheckView { get; set; }
+
+        /// <summary>
+        /// Current website for check
+        /// </summary>
+        public string WebsiteForCheck { get; set; }
 
         #endregion
 
@@ -211,6 +233,29 @@ namespace ProxyGrabber {
             // Load proxy data
             List<Proxy> test = new List<Proxy>();
 
+            Proxy proxy = new Proxy("91.203.239.239", "8080", new ProxyType("HTTP"), new Country("Russia", new Bitmap("C:/Users/roman/source/repos/ProxyGrabber/ProxyGrabber/Images/Russia.png")), new Anonymity("Elite"), 1753);
+
+            test.Add(proxy);
+            test.Add(proxy);
+            test.Add(proxy);
+            test.Add(proxy);
+            test.Add(proxy);
+            test.Add(proxy);
+
+            test.Add(proxy);
+            test.Add(proxy);
+            test.Add(proxy);
+            test.Add(proxy);
+            test.Add(proxy);
+            test.Add(proxy);
+
+            test.Add(proxy);
+            test.Add(proxy);
+            test.Add(proxy);
+            test.Add(proxy);
+            test.Add(proxy);
+            test.Add(proxy);
+
             Proxies = new ObservableCollection<Proxy>(test);
 
             Proxies.CollectionChanged += (s, e) => {
@@ -219,8 +264,21 @@ namespace ProxyGrabber {
             BindingOperations.EnableCollectionSynchronization(Proxies, new object());
             ProxiesView = CollectionViewSource.GetDefaultView(Proxies);
 
-            //string json = JsonConvert.SerializeObject(SensorsView, Formatting.Indented);
+            //string json = JsonConvert.SerializeObject(ProxiesView, Formatting.Indented);
             //MessageBox.Show(json);
+
+            List<Website> websites = new List<Website>();
+            websites.Add(new Website("vk.com"));
+            websites.Add(new Website("google.com"));
+            websites.Add(new Website("facebook.com"));
+            websites.Add(new Website("mail.ru"));
+
+            WebsitesForCheck = new ObservableCollection<Website>(websites);
+            WebsitesForCheck.CollectionChanged += (s, e) => {
+                File.WriteAllText("Websites.json", JsonConvert.SerializeObject(WebsitesForCheck));
+            };
+            BindingOperations.EnableCollectionSynchronization(WebsitesForCheck, new object());
+            WebsitesForCheckView = CollectionViewSource.GetDefaultView(WebsitesForCheck);
 
         }
 
@@ -237,11 +295,41 @@ namespace ProxyGrabber {
         }
 
         private void SettingsWindow() {
-            //var SettingsWindow = new SettingsWindow();
-            //var SettingsViewModel = new SettingsViewModel(SettingsWindow);
-            //SettingsWindow.DataContext = SettingsViewModel;
-            //SettingsWindow.Show();
+            var SettingsWindow = new SettingsWindow();
+            var SettingsViewModel = new SettingsViewModel(SettingsWindow);
+            SettingsWindow.DataContext = SettingsViewModel;
+            SettingsWindow.Show();
         }
+
+        public ICommand SearchProxy {
+            get {
+                if (mSearchProxy == null)
+                    mSearchProxy = new RelayCommand(DoSearchProxy);
+                return mSearchProxy;
+            }
+        }
+
+        private void DoSearchProxy() { }
+
+        public ICommand ExportToTxt {
+            get {
+                if (mExportToTxt == null)
+                    mExportToTxt = new RelayCommand(DoExportToTxt);
+                return mExportToTxt;
+            }
+        }
+
+        private void DoExportToTxt() { }
+
+        public ICommand ExportToClipboard {
+            get {
+                if (mExportToClipboard == null)
+                    mExportToClipboard = new RelayCommand(DoExportToClipboard);
+                return mExportToClipboard;
+            }
+        }
+
+        private void DoExportToClipboard() { }
 
         #endregion
 

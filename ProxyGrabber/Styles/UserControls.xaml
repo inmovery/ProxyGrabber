@@ -2,40 +2,98 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:local="clr-namespace:ProxyGrabber">
 
-    <ControlTemplate x:Key="SensorListItem" TargetType="ListBoxItem">
+    <ControlTemplate x:Key="ProxyListItem" TargetType="ListBoxItem">
         <Grid>
-            <StackPanel Orientation="Horizontal" Name="SensorItem">
-                <Button
-                    Width="25"
-                    Height="25"
-                    Style="{StaticResource RegularButton}"
-                    Command="{Binding DataContext.EditSensor, RelativeSource={RelativeSource AncestorType={x:Type ListBox}}}"
-                    CommandParameter="{Binding}">
-                    <ContentControl Width="25" Height="25" Content="{StaticResource IconSettings}" />
-                </Button>
-                <Button Width="25" Height="25" Margin="10 0 10 0" Style="{StaticResource Hoverless}">
-                    <ContentControl Width="13" Height="13" Content="{StaticResource IconEnabled}" />
-                </Button>
-                <TextBlock Text="{Binding Name}" TextAlignment="Left" TextWrapping="Wrap" Style="{StaticResource TableContentText}" Width="120"/>
-                <TextBlock Text="{Binding SensorType}" Style="{StaticResource TableContentText}" Width="120"/>
-                <TextBlock Text="{Binding Room.TypeName}" Style="{StaticResource TableContentText}" Width="180"/>
-                <TextBlock Text="{Binding Topic}" Style="{StaticResource TableContentText}" Width="240"/>
-                <TextBlock Text="{Binding FrequencyFull}" Style="{StaticResource TableContentText}" Width="160"/>
-                <TextBlock Text="{Binding IsActuatorFull}" Style="{StaticResource TableContentText}" Width="160"/>
+            <StackPanel
+                Orientation="Horizontal"
+                Height="32"
+                Name="ProxyItem">
+
+                <Border
+                    BorderThickness="0 0 1.5 1.5">
+                    <Border.BorderBrush>
+                        <SolidColorBrush Color="Black" />
+                    </Border.BorderBrush>
+                    <TextBlock
+                        Text="{Binding Ip}"
+                        Width="127"
+                        Style="{StaticResource TableContentText}" />
+                </Border>
+
+                <Border
+                    BorderThickness="0 0 1.5 1.5">
+                    <Border.BorderBrush>
+                        <SolidColorBrush Color="Black" />
+                    </Border.BorderBrush>
+                    <TextBlock
+                        Text="{Binding Port}"
+                        Width="62"
+                        Style="{StaticResource TableContentText}" />
+                </Border>
+
+                <Border
+                    BorderThickness="0 0 1.5 1.5">
+                    <Border.BorderBrush>
+                        <SolidColorBrush Color="Black" />
+                    </Border.BorderBrush>
+                    <TextBlock
+                        Text="{Binding Type.Name}"
+                        Width="67"
+                        Style="{StaticResource TableContentText}" />
+
+                </Border>
+
+                <Border
+                    BorderThickness="0 0 1.5 1.5">
+                    <Border.BorderBrush>
+                        <SolidColorBrush Color="Black" />
+                    </Border.BorderBrush>
+                    <TextBlock
+                        Text="{Binding Country.Name}"
+                        Width="122"
+                        Style="{StaticResource TableContentText}" />
+                </Border>
+
+                <Border
+                    BorderThickness="0 0 1.5 1.5">
+                    <Border.BorderBrush>
+                        <SolidColorBrush Color="Black" />
+                    </Border.BorderBrush>
+                    <TextBlock
+                        Text="{Binding Anonymity.State}"
+                        Width="122"
+                        Style="{StaticResource TableContentText}" />
+                </Border>
+
+                <Border
+                    BorderThickness="0 0 1.5 1.5">
+                    <Border.BorderBrush>
+                        <SolidColorBrush Color="Black" />
+                    </Border.BorderBrush>
+                    <TextBlock
+                        Text="{Binding Speed}"
+                        Width="110"
+                        Style="{StaticResource TableContentText}" />
+                </Border>
+
             </StackPanel>
-            <Border
-                BorderThickness="0 0 0 1.5"
-                BorderBrush="{StaticResource BackgroundDarkBrush}"
-                Margin="35 0 0 0" />
         </Grid>
     </ControlTemplate>
 
+    <ControlTemplate x:Key="EmptyListItem" TargetType="ListBoxItem">
+        <Grid>
+            <StackPanel Orientation="Horizontal" Height="32">
+            </StackPanel>
+        </Grid>
+    </ControlTemplate>
+    
     <SolidColorBrush x:Key="ComboBoxNormalBorderBrush" Color="#e3e9ef" />
-    <SolidColorBrush x:Key="ComboBoxNormalBackgroundBrush" Color="#fff" />
-    <SolidColorBrush x:Key="ComboBoxDisabledForegroundBrush" Color="#888" />
-    <SolidColorBrush x:Key="ComboBoxDisabledBackgroundBrush" Color="#eee" />
-    <SolidColorBrush x:Key="ComboBoxDisabledBorderBrush" Color="#888" />
+    <SolidColorBrush x:Key="ComboBoxNormalBackgroundBrush" Color="#ffffff" />
+    <SolidColorBrush x:Key="ComboBoxDisabledForegroundBrush" Color="#888888" />
+    <SolidColorBrush x:Key="ComboBoxDisabledBackgroundBrush" Color="#eeeeee" />
+    <SolidColorBrush x:Key="ComboBoxDisabledBorderBrush" Color="#888888" />
 
+    <!-- Toggle button -->
     <ControlTemplate TargetType="ToggleButton" x:Key="ComboBoxToggleButtonTemplate">
         <Grid>
             <Grid.ColumnDefinitions>
@@ -53,7 +111,7 @@
                 x:Name="ButtonBorder"
                 Grid.Column="1"
                 Margin="1"
-                BorderBrush="#444"
+                BorderBrush="#444444"
                 CornerRadius="3"
                 Background="{StaticResource ComboBoxNormalBackgroundBrush}" />
             <Path
@@ -77,16 +135,20 @@
                 <Setter Property="Panel.Background" TargetName="ButtonBorder" Value="WhiteSmoke"/>
                 <Setter Property="Shape.Fill" TargetName="Arrow" Value="#FF8D979E" />
             </Trigger>
+
             <Trigger Property="UIElement.IsEnabled" Value="False">
                 <Setter Property="Panel.Background" TargetName="Border" Value="{StaticResource ComboBoxDisabledBackgroundBrush}" />
                 <Setter Property="Panel.Background" TargetName="ButtonBorder" Value="{StaticResource ComboBoxDisabledBackgroundBrush}"/>
                 <Setter Property="Border.BorderBrush" TargetName="ButtonBorder" Value="{StaticResource ComboBoxDisabledBorderBrush}"/>
                 <Setter Property="TextElement.Foreground" Value="{StaticResource ComboBoxDisabledForegroundBrush}" />
                 <Setter Property="Shape.Fill" TargetName="Arrow" Value="#999" />
+
             </Trigger>
+
         </ControlTemplate.Triggers>
     </ControlTemplate>
 
+    <!-- Custom combobox -->
     <Style x:Key="CustomComboBox"  TargetType="{x:Type ComboBox}">
         <Setter Property="UIElement.SnapsToDevicePixels" Value="True" />
         <Setter Property="FrameworkElement.OverridesDefaultStyle" Value="True" />
@@ -95,16 +157,20 @@
         <Setter Property="ScrollViewer.CanContentScroll" Value="True" />
         <Setter Property="TextElement.Foreground" Value="Black" />
         <Setter Property="FrameworkElement.FocusVisualStyle" Value="{x:Null}" />
+        <Setter Property="BorderBrush" Value="{StaticResource GeneralBrush}" />
+        <Setter Property="BorderThickness" Value="1.5" />
         <Setter Property="Control.Template">
             <Setter.Value>
                 <ControlTemplate TargetType="ComboBox">
                     <Grid>
                         <ToggleButton
+                            x:Name="CustomToggleButton"
                             Cursor="Hand"
-                            Name="ToggleButton"
                             Grid.Column="2"
                             ClickMode="Press"
                             Focusable="False"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
                             IsChecked="{Binding Path=IsDropDownOpen, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}"
                             Template="{StaticResource ComboBoxToggleButtonTemplate}" />
 
@@ -124,6 +190,8 @@
                             Visibility="Hidden"
                             Background="Transparent"
                             HorizontalAlignment="Left"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
                             VerticalAlignment="Center"
                             Focusable="True">
                             <TextBox.Template>
@@ -162,6 +230,12 @@
                         </Popup>
                     </Grid>
                     <ControlTemplate.Triggers>
+
+                        <Trigger Property="ComboBox.IsEnabled" Value="True">
+                            <Setter Property="BorderBrush" TargetName="DropDownBorder" Value="{StaticResource GeneralBrush}" />
+                            <Setter Property="BorderThickness" TargetName="DropDownBorder" Value="1.5" />
+                        </Trigger>
+                        
                         <Trigger Property="ItemsControl.HasItems" Value="False">
                             <Setter Property="FrameworkElement.MinHeight" TargetName="DropDownBorder" Value="95" />
                         </Trigger>
@@ -182,7 +256,7 @@
         </Setter>
     </Style>
 
-    <!-- Стиль отдельного элемента Combobox -->
+    <!-- Item of Combobox -->
     <Style x:Key="CustomComboBoxItem" TargetType="{x:Type ComboBoxItem}">
         <Setter Property="SnapsToDevicePixels" Value="true" />
         <Setter Property="HorizontalAlignment" Value="Stretch" />
@@ -205,10 +279,11 @@
                             <ContentPresenter />
                         </TextBlock>
                     </Border>
+                    
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsHighlighted" Value="true">
-                            <Setter TargetName="Border" Property="BorderBrush" Value="#0A6AD1"/>
-                            <Setter TargetName="Border" Property="Background" Value="#A6DDF5"/>
+                            <Setter TargetName="Border" Property="BorderBrush" Value="{StaticResource GeneralBrush}"/> <!-- 0A6AD1 -->
+                            <Setter TargetName="Border" Property="Background" Value="#ccccff"/>
                             <Setter TargetName="Border" Property="Cursor" Value="Hand" />
                         </Trigger>
                     </ControlTemplate.Triggers>

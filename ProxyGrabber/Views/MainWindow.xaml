@@ -3,6 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:scroll="clr-namespace:ScrollSynchronizer;assembly=ScrollSynchronizer"
         xmlns:local="clr-namespace:ProxyGrabber"
         MinWidth="{Binding WindowMinimumWidth}" 
         MinHeight="{Binding WindowMinimumHeight}"
@@ -11,7 +12,7 @@
         AllowsTransparency="True"
         ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen"
-        Title="MainWindow" Height="500" Width="800">
+        Title="MainWindow" Height="500" Width="900">
     
     <Window.Resources>
         <Style TargetType="{x:Type local:MainWindow}">
@@ -27,11 +28,11 @@
                                 <Border
                                     x:Name="Container"
                                     Background="{StaticResource BackgroundLightBrush}"
-                                    CornerRadius="{Binding WindowCornerRadius, FallbackValue=0}" /> <!-- FallbackValue=3 -->
+                                    CornerRadius="{Binding WindowCornerRadius, FallbackValue=0}" />
 
                                 <!--Window border and dropshadow-->
                                 <Border CornerRadius="{Binding WindowCornerRadius, FallbackValue=0}"
-                                        Background="{Binding ForegroundLightBrush, FallbackValue=White}"> <!-- FallbackValue=3 -->
+                                        Background="{Binding ForegroundLightBrush, FallbackValue=White}">
                                     <Border.Effect>
                                         <DropShadowEffect ShadowDepth="0" Opacity="0.2" />
                                     </Border.Effect>
@@ -83,28 +84,11 @@
                                     </Grid>
                                     
                                     <!--Drop shadow-->
-                                    <Border Grid.Row="1" Height="6" BorderThickness="0 1 0 0"> <!-- BorderThickness="0 0.2 0 0" -->
+                                    <Border Grid.Row="1" Height="6" BorderThickness="0 1 0 0">
 
                                         <Border.BorderBrush>
                                             <SolidColorBrush Color="Black" Opacity="0.05" />
                                         </Border.BorderBrush>
-                                        
-                                        <!--Underline-->
-                                        <!--<Border.BorderBrush>
-                                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
-                                                <GradientStop Color="{StaticResource ForegroundLight}" Offset="0.0" />
-                                                <GradientStop Color="{StaticResource ForegroundDark}" Offset="0.5" />
-                                                <GradientStop Color="{StaticResource ForegroundLight}" Offset="1.0" />
-                                            </LinearGradientBrush>
-                                        </Border.BorderBrush>-->
-
-                                        <!--Drop shadow-->
-                                        <!--<Border.Background>
-                                            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
-                                                <GradientStop Color="{StaticResource BackgroundLight}" Offset="0.0" />
-                                                <GradientStop Color="{StaticResource ForegroundLight}" Offset="1.0" />
-                                            </LinearGradientBrush>
-                                        </Border.Background>-->
 
                                     </Border>
 
@@ -122,6 +106,7 @@
                 </Setter.Value>
             </Setter>
         </Style>
+
     </Window.Resources>
 
     <WindowChrome.WindowChrome>
@@ -133,8 +118,328 @@
             />
     </WindowChrome.WindowChrome>
 
-    <Grid>
-        
-    </Grid>
-    
+    <StackPanel
+        Orientation="Vertical"
+        Width="Auto">
+
+        <Grid>
+
+            <Grid.Resources>
+                <Style TargetType="ScrollViewer">
+                    <Setter Property="scroll:ScrollControl.ScrollGroup" Value="CustomGroup" />
+                </Style>
+            </Grid.Resources>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Column="0">
+
+                <StackPanel
+                    Orientation="Vertical"
+                    Width="Auto">
+
+                    <!-- Headers -->
+                    <StackPanel Orientation="Horizontal" Margin="20 20 0 0">
+                        <Border
+                            BorderThickness="1.5"
+                            Height="32"
+                            Width="130"
+                            Background="{StaticResource GeneralBrush}">
+                            <Border.BorderBrush>
+                                <SolidColorBrush Color="Black" />
+                            </Border.BorderBrush>
+                            <TextBlock
+                                Text="IP Address"
+                                Style="{StaticResource TableHeaderText}" />
+                        </Border>
+
+                        <Border
+                            BorderThickness="1.5"
+                            Height="32"
+                            Width="65"
+                            Margin="-1.5 0 0 0"
+                            Background="{StaticResource GeneralBrush}">
+                            <Border.BorderBrush>
+                                <SolidColorBrush Color="Black" />
+                            </Border.BorderBrush>
+                            <TextBlock
+                                Text="Port"
+                                Style="{StaticResource TableHeaderText}" />
+                        </Border>
+
+                        <Border
+                            BorderThickness="1.5"
+                            Height="32"
+                            Width="70"
+                            Margin="-1.5 0 0 0"
+                            Background="{StaticResource GeneralBrush}">
+                            <Border.BorderBrush>
+                                <SolidColorBrush Color="Black" />
+                            </Border.BorderBrush>
+                            <TextBlock
+                                Text="Type"
+                                Style="{StaticResource TableHeaderText}" />
+                        </Border>
+
+                        <Border
+                            BorderThickness="1.5"
+                            Height="32"
+                            Width="125"
+                            Margin="-1.5 0 0 0"
+                            Background="{StaticResource GeneralBrush}">
+                            <Border.BorderBrush>
+                                <SolidColorBrush Color="Black" />
+                            </Border.BorderBrush>
+                            <TextBlock
+                                Text="Country"
+                                Style="{StaticResource TableHeaderText}" />
+                        </Border>
+
+                        <Border
+                            BorderThickness="1.5"
+                            Height="32"
+                            Width="125"
+                            Margin="-1.5 0 0 0"
+                            Background="{StaticResource GeneralBrush}">
+                            <Border.BorderBrush>
+                                <SolidColorBrush Color="Black" />
+                            </Border.BorderBrush>
+                            <TextBlock
+                                Text="Anonymity"
+                                Style="{StaticResource TableHeaderText}" />
+                        </Border>
+
+                        <Border
+                            BorderThickness="1.5"
+                            Height="32"
+                            Width="110"
+                            Margin="-1.5 0 0 0"
+                            Background="{StaticResource GeneralBrush}">
+                            <Border.BorderBrush>
+                                <SolidColorBrush Color="Black" />
+                            </Border.BorderBrush>
+                            <TextBlock
+                                Text="Speed [ms]"
+                                Style="{StaticResource TableHeaderText}" />
+                        </Border>
+
+                    </StackPanel>
+
+                    <!-- Content of a table -->
+                    <Border
+                        BorderThickness="1.5"
+                        HorizontalAlignment="Left"
+                        Margin="20 -1.5 0 0"
+                        Width="617.5"
+                        Height="352">
+                        <Border.BorderBrush>
+                            <SolidColorBrush Color="Black" />
+                        </Border.BorderBrush>
+                        <ListBox
+                            x:Name="ProxyListBox"
+                            BorderThickness="0"
+                            SelectionMode="Extended"
+                            Padding="0"
+                            Margin="0 0 0 0"
+                            HorizontalContentAlignment="Stretch"
+                            Background="Transparent"
+                            ItemsSource="{Binding ProxiesView}">
+                            <ListBox.ItemContainerStyle>
+                                <Style TargetType="ListBoxItem">
+                                    <Setter Property="Template" Value="{StaticResource ProxyListItem}" />
+                                </Style>
+                            </ListBox.ItemContainerStyle>
+
+                            <ListBox.Template>
+                                <ControlTemplate>
+                                    <ScrollViewer
+                                        HorizontalScrollBarVisibility="Disabled"
+                                        VerticalScrollBarVisibility="Hidden"
+                                        scroll:ScrollControl.ScrollGroup="CustomGroup">
+                                        <ItemsPresenter />
+                                    </ScrollViewer>
+                                </ControlTemplate>
+                            </ListBox.Template>
+
+                            <!--<ListBoxItem>
+                                <Grid />
+                            </ListBoxItem>-->
+
+                        </ListBox>
+                    </Border>
+                </StackPanel>
+            </Grid>
+
+            <!-- ScrollViewer -->
+            <Grid Grid.Column="1" Margin="0 45 0 0" Height="375">
+                <ListBox
+                    x:Name="ProxyListBoxTwo"
+                    BorderThickness="0"
+                    Padding="0" Width="20"
+                    Background="Transparent"
+                    ScrollViewer.VerticalScrollBarVisibility="Visible"
+                    ItemsSource="{Binding ProxiesView}">
+                    <ListBox.ItemContainerStyle>
+                        <Style TargetType="ListBoxItem">
+                            <Setter Property="Template" Value="{StaticResource EmptyListItem}" />
+                        </Style>
+                    </ListBox.ItemContainerStyle>
+
+                    <ListBox.Template>
+                        <ControlTemplate>
+                            <ScrollViewer
+                                HorizontalScrollBarVisibility="Disabled"
+                                scroll:ScrollControl.ScrollGroup="CustomGroup">
+                                <ItemsPresenter />
+                            </ScrollViewer>
+                        </ControlTemplate>
+                    </ListBox.Template>
+                </ListBox>
+            </Grid>
+
+            <!-- Settings -->
+            <Grid
+                Grid.Column="2"
+                Margin="5 40 0 0"
+                HorizontalAlignment="Center">
+
+                <StackPanel Orientation="Vertical">
+                    <Button
+                        Width="145"
+                        Height="40"
+                        FontSize="16"
+                        Padding="10 5 10 5"
+                        Command="{Binding ChangeSettings}"
+                        Style="{StaticResource SettingsButton}"
+                        FontFamily="{StaticResource MontserratBold}"
+                        Content="Настройки"/>
+
+                    <StackPanel
+                        Orientation="Horizontal"
+                        HorizontalAlignment="Center"
+                        Margin="0 20 0 0">
+                        <TextBlock
+                            Text="Check "
+                            FontSize="16"
+                            VerticalAlignment="Center"
+                            FontFamily="{StaticResource MontserratSemiBold}" />
+
+                        <ComboBox
+                            MinWidth="150"
+                            Width="Auto"
+                            Height="30"
+                            HorizontalAlignment="Left"
+                            FontSize="14"
+                            FontFamily="{StaticResource MontserratRegular}"
+                            Style="{StaticResource CustomComboBox}"
+                            ItemsSource="{Binding WebsitesForCheckView}"
+                            SelectedIndex="0"
+                            SelectedItem="{Binding WebsiteForCheck, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                            ItemContainerStyle="{StaticResource CustomComboBoxItem}">
+                        </ComboBox>
+
+                    </StackPanel>
+
+                    <StackPanel
+                        Orientation="Horizontal"
+                        HorizontalAlignment="Center"
+                        Margin="0 20 0 0">
+
+                        <TextBlock
+                            Text="Count "
+                            FontSize="16"
+                            VerticalAlignment="Center"
+                            FontFamily="{StaticResource MontserratSemiBold}" />
+
+                        <TextBox
+                            Width="60"
+                            Height="30"
+                            HorizontalAlignment="Center"
+                            FontSize="15"
+                            TextAlignment="Center"
+                            BorderBrush="#d9d9db"
+                            BorderThickness="1"
+                            Padding="5"
+                            FontFamily="{StaticResource MontserratSemiBold}"
+                            Style="{StaticResource CustomTextBox}" />
+
+                    </StackPanel>
+
+                    <StackPanel
+                        Orientation="Horizontal"
+                        HorizontalAlignment="Center"
+                        Margin="0 20 0 0">
+
+                        <TextBlock
+                            Text="Speed "
+                            FontSize="16"
+                            VerticalAlignment="Center"
+                            FontFamily="{StaticResource MontserratSemiBold}" />
+
+                        <TextBox
+                            Width="80"
+                            Height="30"
+                            HorizontalAlignment="Center"
+                            TextAlignment="Center"
+                            FontSize="15"
+                            BorderBrush="#d9d9db"
+                            BorderThickness="1"
+                            Padding="5"
+                            FontFamily="{StaticResource MontserratSemiBold}"
+                            Style="{StaticResource CustomTextBox}" />
+
+                    </StackPanel>
+
+                    <Button
+                        Width="108"
+                        Height="35"
+                        FontSize="16"
+                        Padding="12 6 10 5"
+                        Command="{Binding SearchProxy}"
+                        Style="{StaticResource SearchButton}"
+                        FontFamily="{StaticResource MontserratBold}"
+                        Content="Поиск"
+                        Margin="0 20 0 0"/>
+
+                    <StackPanel Orientation="Vertical" Margin="0 20 0 0">
+                        <TextBlock
+                            Text="Export:"
+                            FontFamily="{StaticResource MontserratSemiBold}"
+                            FontSize="16"
+                            HorizontalAlignment="Center"/>
+
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                            <Button
+                                Width="40"
+                                Height="40"
+                                Command="{Binding ExportToTxt}"
+                                Padding="9 5 2 2"
+                                Style="{StaticResource CustomButtonTemplate}"
+                                Margin="0 10 30 0">
+                                <ContentControl Content="{StaticResource ExportToTxtIcon}" />
+                            </Button>
+
+                            <Button
+                                Width="40"
+                                Height="40"
+                                Command="{Binding ExportToClipboard}"
+                                Padding="8 1 2 2"
+                                Style="{StaticResource CustomButtonTemplate}"
+                                Margin="0 10 0 0">
+                                <ContentControl Content="{StaticResource ExportToClipboardIcon}" />
+                            </Button>
+                        </StackPanel>
+
+                    </StackPanel>
+
+                </StackPanel>
+            </Grid>
+
+        </Grid>
+    </StackPanel>
+
 </Window>

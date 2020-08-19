@@ -30,6 +30,10 @@
     <Color x:Key="ForegroundDark">#000000</Color>
     <SolidColorBrush x:Key="ForegroundBlackBrush" Color="{StaticResource ForegroundBlack}"/>
 
+    <!-- General color -->
+    <SolidColorBrush x:Key="GeneralBrush" Color="#493AFC" />
+    <Color x:Key="GeneralColor">#493AFC</Color>
+    
     <!-- Новое -->
 
     <SolidColorBrush x:Key="DarkBaseBrush" Color="#158150" />
