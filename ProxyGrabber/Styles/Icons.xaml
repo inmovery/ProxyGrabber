@@ -1,6 +1,6 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:local="clr-namespace:ProxyGrabber.Styles">
+                    xmlns:local="clr-namespace:ProxyGrabber">
 
     <Grid x:Key="IconMinimize" x:Shared="False">
         <Rectangle Width="17" Height="1" RadiusX="0.5" RadiusY="0.5" Fill="#FF8F8F8F" />
