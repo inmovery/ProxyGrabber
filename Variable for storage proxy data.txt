@@ -1,0 +1,59 @@
+{
+	"testHost": "",
+	"proxyIp": 0,
+	"proxyPort": 0,
+	"localIp": 0,
+	"connectTimeout": 0,
+	"timeout": 0,
+	"websites": [
+		{
+			"name": "example",
+			"url": "http://example.com"
+		},
+		{
+			"name": "vk",
+			"url": "https://vk.com"
+		},
+		{
+			"name": "google",
+			"url": "https://google.com"
+		},
+	]
+}
+
+// Result:
+[{
+  "get": true,
+  "post": true,
+  "cookies": true,
+  "referer": true,
+  "user-agent": true,
+  "anonymityLevel": 1,
+  "supportsHttps": true,
+  "protocol": "http",
+  "ip": "107.151.152.218",
+  "port": 80,
+  "country": "MX",
+  "connectTime": 0.23, // Time in seconds it took to establish the connection
+  "totalTime": 1.1, // Total transaction time in seconds for last the transfer
+  "websites": {
+    "example": {
+      "responseCode": 200,
+      "connectTime": 0.648131, // seconds
+      "totalTime": 0.890804, // seconds
+      "receivedLength": 1270, // bytes
+      "averageSpeed": 1425 // bytes per second
+    },
+    "vk": false,
+    "google": {
+      "responseCode": 200,
+      "connectTime": 0.648131, // seconds
+      "totalTime": 0.890804, // seconds
+      "receivedLength": 1270, // bytes
+      "averageSpeed": 1425 // bytes per second
+    }
+  }
+}]
+
+
+
