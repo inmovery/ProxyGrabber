@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Data;
 using System.Windows.Input;
+using ProxyGrabber.ViewModels.Base;
 
 namespace ProxyGrabber.ViewModels {
     public class SettingsViewModel : BaseViewModel {

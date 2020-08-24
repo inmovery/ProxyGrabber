@@ -49,7 +49,7 @@
                         <SolidColorBrush Color="Black" />
                     </Border.BorderBrush>
                     <TextBlock
-                        Text="{Binding Country.Name}"
+                        Text="{Binding Location.Country}"
                         Width="122"
                         Style="{StaticResource TableContentText}" />
                 </Border>
@@ -166,7 +166,6 @@
                         <ToggleButton
                             x:Name="CustomToggleButton"
                             Cursor="Hand"
-                            Grid.Column="2"
                             ClickMode="Press"
                             Focusable="False"
                             BorderBrush="{TemplateBinding BorderBrush}"

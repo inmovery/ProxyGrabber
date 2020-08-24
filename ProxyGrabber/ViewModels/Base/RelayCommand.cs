@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Input;
 
-namespace ProxyGrabber {
+namespace ProxyGrabber.ViewModels.Base {
     /// <summary>
     /// A basic command that runs an Action
     /// </summary>

@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ProxyGrabber.Models {
+﻿namespace ProxyGrabber.Models {
     public class Proxy {
 
         public string Ip { get; set; }
@@ -13,17 +7,17 @@ namespace ProxyGrabber.Models {
 
         public ProxyType Type { get; set; } 
 
-        public Country Country { get; set; }
+        public Location Location { get; set; }
 
         public Anonymity Anonymity { get; set; }
 
         public int Speed { get; set; }
 
-        public Proxy(string ip_address, string port, ProxyType type, Country country, Anonymity anonymity, int speed) {
-            this.Ip = ip_address;
+        public Proxy(string ipAddress, string port, ProxyType type, Location location, Anonymity anonymity, int speed) {
+            this.Ip = ipAddress;
             this.Port = port;
             this.Type = type;
-            this.Country = country;
+            this.Location = location;
             this.Anonymity = anonymity;
             this.Speed = speed;
         }

@@ -15,6 +15,7 @@ using ProxyGrabber.ViewModels;
 using System.Linq;
 using System.Reflection;
 using System.Drawing;
+using ProxyGrabber.ViewModels.Base;
 using Point = System.Windows.Point;
 using ProxyGrabber.Views;
 
@@ -233,7 +234,7 @@ namespace ProxyGrabber {
             // Load proxy data
             List<Proxy> test = new List<Proxy>();
 
-            Proxy proxy = new Proxy("91.203.239.239", "8080", new ProxyType("HTTP"), new Country("Russia", new Bitmap("C:/Users/roman/source/repos/ProxyGrabber/ProxyGrabber/Images/Russia.png")), new Anonymity("Elite"), 1753);
+            Proxy proxy = new Proxy("91.203.239.239", "8080", new ProxyType("HTTP"), new Location("Russia"), new Anonymity("Elite"), 1753);
 
             test.Add(proxy);
             test.Add(proxy);
