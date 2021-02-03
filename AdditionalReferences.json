@@ -1,0 +1,357 @@
+{
+    "core": {
+        "threads": "1850",
+        "keepAlive": true,
+        "timeout": "60000",
+        "retries": "10",
+        "shuffle": false,
+        "captureFullData": false,
+        "captureServer": false,
+        "protocols": {
+            "http": false,
+            "https": false,
+            "socks4": true,
+            "socks5": false
+        }
+    },
+    "judges": {
+        "swap": true,
+        "items": [
+            {
+                "active": true,
+                "url": "http://proxyjudge.info/azenv.php",
+                "validate": "AZ Environment variables"
+            },
+            {
+                "active": true,
+                "url": "http://www.sbjudge3.com/azenv.php",
+                "validate": "AZ Environment variables"
+            },
+            {
+                "active": true,
+                "url": "http://proxyjudge.us/azenv.php",
+                "validate": "AZ Environment variables"
+            },
+            {
+                "active": true,
+                "url": "http://azenv.net/",
+                "validate": "AZ Environment variables"
+            },
+            {
+                "active": true,
+                "url": "http://www.cooleasy.com/azenv.php",
+                "validate": "AZ Environment variables"
+            },
+            {
+                "active": true,
+                "url": "http://pascal.hoez.free.fr/azenv.php",
+                "validate": "AZ Environment variables"
+            },
+            {
+                "active": true,
+                "url": "http://www.proxy-listen.de/azenv.php",
+                "validate": "AZ Environment variables"
+            },
+            {
+                "active": true,
+                "url": "https://api.ipify.org/",
+                "validate": "(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)"
+            },
+            {
+                "active": true,
+                "url": "https://ident.me/",
+                "validate": "(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)"
+            },
+            {
+                "url": "http://www.meow.org.uk/cgi-bin/env.pl",
+                "validate": "AZ Environment variables",
+                "active": true
+            },
+            {
+                "url": "http://www.wfuchs.de/azenv.php",
+                "validate": "AZ Environment variables",
+                "active": true
+            },
+            {
+                "url": "http://www2t.biglobe.ne.jp/~take52/test/env.cgi",
+                "validate": "AZ Environment variables",
+                "active": true
+            },
+            {
+                "url": "http://www.mitchfincher.com/tips/web/envs.pl",
+                "validate": "AZ Environment variables",
+                "active": true
+            },
+            {
+                "url": "http://ln.to/env.cgi",
+                "validate": "AZ Environment variables",
+                "active": true
+            },
+            {
+                "url": "http://eco.cutepia.net/env.cgi",
+                "validate": "AZ Environment variables",
+                "active": true
+            },
+            {
+                "url": "http://www.luisaranguren.com/azenv.php",
+                "validate": "AZ Environment variables",
+                "active": true
+            },
+            {
+                "url": "http://mojeip.net.pl/asdfa/azenv.php",
+                "validate": "AZ Environment variables",
+                "active": true
+            },
+            {
+                "url": "http://impuls.name/pgpro/getheaders0.php",
+                "validate": "AZ Environment variables",
+                "active": true
+            },
+            {
+                "url": "http://httpheader.net/azenv.php",
+                "validate": "AZ Environment variables",
+                "active": true
+            },
+            {
+                "url": "http://shinh.org/env.cgi",
+                "validate": "AZ Environment variables",
+                "active": true
+            },
+            {
+                "url": "http://proxydemon.com/azenv.php",
+                "validate": "AZ Environment variables",
+                "active": true
+            },
+            {
+                "url": "http://blueforestdigital.com/azz/azz.php",
+                "validate": "AZ Environment variables",
+                "active": true
+            },
+            {
+                "url": "http://luisaranguren.com/azenv.php",
+                "validate": "AZ Environment variables",
+                "active": true
+            },
+            {
+                "url": "http://proxyjudge.info",
+                "validate": "AZ Environment variables",
+                "active": true
+            },
+            {
+                "url": "http://users.on.net/~emerson/env/env.pl",
+                "validate": "AZ Environment variables",
+                "active": true
+            },
+            {
+                "url": "http://www.sevy.eu.org/azenv.php",
+                "validate": "AZ Environment variables",
+                "active": true
+            },
+            {
+                "url": "http://membres.lycos.fr/proxyworld/azenv.php",
+                "validate": "AZ Environment variables",
+                "active": true
+            },
+            {
+                "url": "http://www.filinfo.net/azenv.php",
+                "validate": "AZ Environment variables",
+                "active": true
+            },
+            {
+                "url": "http://osmosis.darkcage.com/azenvjdge.php",
+                "validate": "AZ Environment variables",
+                "active": true
+            },
+            {
+                "url": "http://proxyworld.ifrance.com/azenv.php",
+                "validate": "AZ Environment variables",
+                "active": true
+            },
+            {
+                "url": "http://www.proxy-heaven.com/azenv.php",
+                "validate": "AZ Environment variables",
+                "active": true
+            },
+            {
+                "url": "http://proxywordl.hbg.fr/azenv.php",
+                "validate": "AZ Environment variables",
+                "active": true
+            },
+            {
+                "url": "http://proxywoorld.ovh.org/azenv.php",
+                "validate": "AZ Environment variables",
+                "active": true
+            },
+            {
+                "url": "http://www.belgarion.com/images/azenv.php",
+                "validate": "AZ Environment variables",
+                "active": true
+            },
+            {
+                "url": "http://www.pr0.net/deny2/azenv.php",
+                "validate": "AZ Environment variables",
+                "active": true
+            },
+            {
+                "url": "http://7ujm.net/Perl/env.cgi",
+                "validate": "AZ Environment variables",
+                "active": true
+            },
+            {
+                "url": "https://acutransaloft.com/cgi-bin/env.pl",
+                "validate": "AZ Environment variables",
+                "active": true
+            },
+            {
+                "url": "http://artep.fr/cgi-bin/env.cgi",
+                "validate": "AZ Environment variables",
+                "active": true
+            },
+            {
+                "url": "http://azenv.net",
+                "validate": "AZ Environment variables",
+                "active": true
+            },
+            {
+                "url": "http://beatricedesrousseaux.fr/public_html/cgi-bin/env.cgi",
+                "validate": "AZ Environment variables",
+                "active": true
+            },
+            {
+                "url": "http://besb.co.uk/cgi-bin/environment.pl",
+                "validate": "AZ Environment variables",
+                "active": true
+            },
+            {
+                "url": "http://biocase.senckenberg.de/utilities/printenv.cgi",
+                "validate": "AZ Environment variables",
+                "active": true
+            },
+            {
+                "url": "http://blacksalmonphuket.com/cgi-bin/env.cgi",
+                "validate": "AZ Environment variables",
+                "active": true
+            },
+            {
+                "url": "http://cgi.members.interq.or.jp/black/tetsuzo/host/env.cgi",
+                "validate": "AZ Environment variables",
+                "active": true
+            },
+            {
+                "url": "http://cgi.orbin.se/env.php",
+                "validate": "AZ Environment variables",
+                "active": true
+            },
+            {
+                "url": "http://cgi.www5a.biglobe.ne.jp/%7Ecafesp/env.cgi",
+                "validate": "AZ Environment variables",
+                "active": true
+            },
+            {
+                "url": "http://deresuke.com/env.php",
+                "validate": "AZ Environment variables",
+                "active": true
+            },
+            {
+                "url": "http://cristablank.com/cgi-bin/env.cgi",
+                "validate": "AZ Environment variables",
+                "active": true
+            },
+            {
+                "url": "http://devopac.rz.uni-frankfurt.de/env.pl",
+                "validate": "AZ Environment variables",
+                "active": true
+            },
+            {
+                "url": "http://dkerr.com/cgi-bin/printenv.pl",
+                "validate": "AZ Environment variables",
+                "active": true
+            },
+            {
+                "url": "http://draughtboard.org/cgi-bin/ls-env.pl",
+                "validate": "AZ Environment variables",
+                "active": true
+            },
+            {
+                "url": "http://elearning.kpru.ac.th/cgi-bin//printenv.pl",
+                "validate": "AZ Environment variables",
+                "active": true
+            },
+            {
+                "url": "http://www.energiebleue.com/cgi-bin/env.cgi",
+                "validate": "AZ Environment variables",
+                "active": true
+            },
+            {
+                "url": "http://enot.lk.net/env.pl",
+                "validate": "AZ Environment variables",
+                "active": true
+            },
+            {
+                "url": "http://fulltext.library.karelia.ru/cgi-bin/env.pl",
+                "validate": "AZ Environment variables",
+                "active": true
+            },
+            {
+                "url": "http://gregoire-billet.com/cgi-bin/env.cgi",
+                "validate": "AZ Environment variables",
+                "active": true
+            },
+            {
+                "url": "http://grivelet.fr/cgi-bin/env.cgi",
+                "validate": "AZ Environment variables",
+                "active": true
+            },
+            {
+                "url": "http://gscapps.grocerybiz.com/cgi-bin/printenv.pl",
+                "validate": "AZ Environment variables",
+                "active": true
+            },
+            {
+                "url": "http://home.in.tum.de/~loevenic/cgi-bin/env.pl",
+                "validate": "AZ Environment variables",
+                "active": true
+            },
+            {
+                "url": "http://pinox.ru/proxyjudge.php",
+                "validate": "AZ Environment variables",
+                "active": true
+            },
+            {
+                "url": "http://www.buka.ru/cgi-bin/printenv.pl",
+                "validate": "AZ Environment variables",
+                "active": true
+            }
+        ]
+    },
+    "ip": {
+        "lookupUrl": "https://api.ipify.org"
+    },
+    "blacklist": {
+        "filter": false,
+        "items": [
+            {
+                "title": "Spamhaus DROP",
+                "active": true,
+                "path": "https://www.spamhaus.org/drop/drop.txt"
+            },
+            {
+                "title": "Spamhaus EDROP",
+                "active": true,
+                "path": "https://www.spamhaus.org/drop/edrop.txt"
+            },
+            {
+                "title": "MYIP.MS General",
+                "active": true,
+                "path": "https://myip.ms/files/blacklist/general/latest_blacklist.txt"
+            }
+        ]
+    },
+    "exporting": {
+        "type": 1
+    },
+    "main": {
+        "dark": true
+    },
+    "version": "1.6.1"
+}

@@ -228,34 +228,14 @@ namespace ProxyGrabber {
             CloseCommand = new RelayCommand(() => mWindow.Close());
             MenuCommand = new RelayCommand(() => SystemCommands.ShowSystemMenu(mWindow, getMousePosition()));
 
-            // Fix window resize issue
-            var resizer = new WindowResizer(mWindow);
-
             // Load proxy data
             List<Proxy> test = new List<Proxy>();
 
             Proxy proxy = new Proxy("91.203.239.239", "8080", new ProxyType("HTTP"), new Location("Russia"), new Anonymity("Elite"), 1753);
 
-            test.Add(proxy);
-            test.Add(proxy);
-            test.Add(proxy);
-            test.Add(proxy);
-            test.Add(proxy);
-            test.Add(proxy);
-
-            test.Add(proxy);
-            test.Add(proxy);
-            test.Add(proxy);
-            test.Add(proxy);
-            test.Add(proxy);
-            test.Add(proxy);
-
-            test.Add(proxy);
-            test.Add(proxy);
-            test.Add(proxy);
-            test.Add(proxy);
-            test.Add(proxy);
-            test.Add(proxy);
+            for (int i = 0; i < 100; i++) {
+                test.Add(proxy);
+            }
 
             Proxies = new ObservableCollection<Proxy>(test);
 
